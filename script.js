@@ -1,38 +1,44 @@
-console.log('hello')
+const stars = document.querySelectorAll(".star");
+const output = document.querySelector('.output');
 
-let titleDiv = document.getElementById('title')
 
-console.log('before: ', titleDiv.innerText)
-
-let message = 'Square Color Counter 🚀'
-
-titleDiv.innerText = message;
-
-console.log('after: ', titleDiv.innerText)
-
-titleDiv.innerHTML = `<p>${message}</p>`
-
-titleDiv.style.backgroundColor = 'blue'
-
-const squares = document.querySelectorAll('.colorSquare')
-
-// forEach
-const timesClicked = {'red': 0, 'yellow': 0, 'green': 0}
-squares.forEach(square => {
-  square.onclick = () => {
-    timesClicked[square.value] += 1
-    square.innerText = timesClicked[square.value]
-  }
-})
-function clearScores() {
-  timesClicked.red = 0
-  timesClicked.yellow = 0
-  timesClicked.green = 0
-  squares.forEach(square => {
-    square.innerText = ''
-  })
+for(let i = 0; i < stars.length; i++) {
+    stars[i].starValue = i+1;
+    ["click", "mouseover", "mouseout"].forEach(function(e) {
+        stars[i].addEventListener(e, showrating);
+    })
 }
 
-const clearGameBtn = document.getElementById('clear-game')
-clearGameBtn.onclick = () => clearScores()
+function showrating(e){
+        let type = e.type;
+        let starValue = this.starValue;
+        if(type == "click"){
+            output.innerHTML = "You rated this " + starValue + " stars.";
+        }
+        stars.forEach(function(elem, ind) {
+            if(type === 'click'){
+                console.log("I am clicked");
+                if(ind < starValue) {
+                    elem.classList.add("orange");
+                }
+                else{
+                    elem.classList.remove("orange");
+                }
+            }  
+            else if(type === "mouseover"){
+                if(ind < starValue) {
+                    elem.classList.add("yellow");
+                }
+                else{
+                    elem.classList.remove("yellow");
+                }
+            }
+            else{
+                elem.classList.remove("yellow");
+            }      
+        })
+}
 
+function nextPage(){
+    window.location.reload();
+}

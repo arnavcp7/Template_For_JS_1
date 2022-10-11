@@ -1,26 +1,27 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-  <div id='title'>
-  <h2>Hello Night!</h2>
-</div>
+    <script src="https://kit.fontawesome.com/ba303fcb20.js" crossorigin="anonymous"></script>
+    <h1>Rate your favourite picture</h1>
+    <div class="star-rating">
+        <img src="https://source.unsplash.com/random/400x300/?hotel" alt="">
+        <ul class="stars">
+            <li class="star"><i class="fa-solid fa-star"></i></li>
+            <li class="star"><i class="fa-solid fa-star"></i></li>
+            <li class="star"><i class="fa-solid fa-star"></i></li>
+            <li class="star"><i class="fa-solid fa-star"></i></li>
+            <li class="star"><i class="fa-solid fa-star"></i></li>
+        </ul>
+        <p class="output">Rating</p>
+        <button class="btn" onclick="nextPage()">NEXT</button>
+        <script src="script.js"></script>
 
-<div style="display: flex">
-  <button class='colorSquare' id='red' style="height: 100px; width: 100px; background-color: red;" value='red'></button>
-  
-  <button class='colorSquare' id='yellow' style="height: 100px; width: 100px; background-color: yellow;" value='yellow'></button>
-  
-  <button class='colorSquare' id='green' style="height: 100px; width: 100px; background-color: green;" value='green'></button>
-</div>
-
-<button id='clear-game'>Clear Game</button>
-
-<script src='script.js'></script>
+    </div>
 </body>
 </html>
